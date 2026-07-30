@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Redress Engine — use rights you already have</title>
+<meta name="description" content="Plain-English rights, the real statutory lever for each scenario, calm cited letters, deadlines, and free human help. Not legal advice. UK." />
+<link rel="manifest" href="manifest.webmanifest" />
+<style>
+  :root{
+    --bg:#0b0e14;--panel:#131926;--panel2:#0e1219;--line:#222c3d;--ink:#e9eef7;--mid:#aeb9ca;--dim:#7c8a9e;
+    --teal:#38d6c6;--teal-dim:#1d6f68;--allow:#42c766;--warn:#e0a92a;--block:#f2584c;
+    --mono:ui-monospace,"SF Mono",Consolas,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:16px}
+  .wrap{max-width:820px;margin:0 auto;padding:22px 18px 80px}
+  header h1{font-size:26px;margin:0;letter-spacing:-.01em}
+  header .sub{color:var(--mid);margin:6px 0 0;font-size:15px}
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--warn);border:1px solid #4a3a14;background:#1c1608;border-radius:999px;padding:3px 9px;margin-top:10px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);font-family:var(--mono);margin:0 0 12px}
+  .steps{display:flex;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--mid)}
+  .steps b{color:var(--teal)}
+  .scenarios{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media(max-width:560px){.scenarios{grid-template-columns:1fr}}
+  button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:11px 13px;text-align:left}
+  button:hover{border-color:var(--teal)}
+  .primary{background:#0f2a27;border-color:var(--teal-dim);color:var(--teal);font-weight:600;text-align:center}
+  textarea,input,select{width:100%;background:#070a0f;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px;font:inherit}
+  textarea:focus,input:focus,select:focus{outline:none;border-color:var(--teal)}
+  label{display:block;font-size:12px;color:var(--dim);margin:10px 0 4px;font-family:var(--mono)}
+  .right{border-left:3px solid var(--teal-dim);padding:8px 0 8px 12px;margin:10px 0}
+  .right.warn{border-left-color:var(--warn)}
+  .chip{font-family:var(--mono);font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;margin-right:6px}
+  .c-ok{color:#04140b;background:var(--allow)} .c-warn{color:#1a1206;background:var(--warn)}
+  .src{color:var(--dim);font-size:12px;font-family:var(--mono)}
+  .cav{color:var(--warn);font-size:13.5px;margin-top:4px}
+  .human{border:1px solid var(--teal-dim);background:#08201e;border-radius:11px;padding:12px 14px;margin-top:8px}
+  .human a{color:var(--teal)}
+  .stakes{background:#2a1512;border:1px solid #b3423b;color:#ffb4ad;border-radius:9px;padding:9px 12px;margin-bottom:10px;font-size:14px}
+  ul{margin:6px 0;padding-left:20px;color:var(--mid);font-size:14.5px} li{margin:3px 0}
+  .esc{font-family:var(--mono);font-size:13px;color:var(--mid)}
+  .disc{color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .grow{flex:1;min-width:120px}
+  .out{white-space:pre-wrap;background:#070a0f;border:1px solid var(--line);border-radius:9px;padding:12px;font-size:14px;margin-top:8px}
+  .muted{color:var(--dim);font-size:13px}
+  .tonebad{color:var(--block)} .tonegood{color:var(--allow)}
+  details summary{cursor:pointer;color:var(--teal);font-size:13px}
+  .hidden{display:none}
+  .deadline{display:flex;justify-content:space-between;gap:8px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:14px}
+  .deadline.due{border-color:var(--block);color:#ffb4ad}
+  a{color:var(--teal)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚖ The Redress Engine</h1>
+    <p class="sub">The law is public — the interface is locked behind money and jargon. This is the interface: your real right, the calm correct step, the deadline, and free human help.</p>
+    <span class="tag">Not legal advice · UK law · always routes you to free experts</span>
+  </header>
+
+  <div class="card">
+    <h2>How to use</h2>
+    <div class="steps"><span><b>1.</b> Pick what's happening (or describe it).</span> <span><b>2.</b> Read your real right + deadline.</span> <span><b>3.</b> Generate a calm, cited letter & send it.</span> <span><b>4.</b> If ignored, escalate — or get the free human help shown.</span></div>
+  </div>
+
+  <div class="card">
+    <h2>What's happening?</h2>
+    <div class="scenarios" id="scenarios"></div>
+    <label style="margin-top:14px">…or describe it in your own words</label>
+    <textarea id="freetext" rows="3" placeholder="e.g. My Universal Credit was stopped and they say it's my fault but I did everything right"></textarea>
+    <div class="row" style="margin-top:8px">
+      <button class="primary grow" id="analyseBtn">Analyse my situation</button>
+      <button id="setupBtn" title="Optional: on-device WebLLM or your own API key">⚙ AI setup</button>
+    </div>
+    <p class="muted" id="aiStatus">No AI needed — picking a scenario works fully offline. The optional AI just reads your free text to pick the right one.</p>
+  </div>
+
+  <div id="aiSetup" class="card hidden">
+    <h2>AI setup (optional · sovereign)</h2>
+    <p class="muted">The legal content always comes from the built-in verified table — the AI only helps read your free text and word the letter. It never invents law.</p>
+    <div class="row">
+      <button id="webllmBtn" class="grow">▶ Run a model on THIS device (WebLLM · no key, private)</button>
+    </div>
+    <p class="muted" id="webllmStatus"></p>
+    <label>…or bring your own API key (stored only in this browser)</label>
+    <div class="row">
+      <select id="provider" style="max-width:150px"><option value="anthropic">Anthropic</option><option value="openai">OpenAI</option><option value="gemini">Google Gemini</option></select>
+      <input id="apikey" class="grow" type="password" placeholder="paste your API key" />
+      <button id="saveKey">Save</button>
+    </div>
+  </div>
+
+  <div id="result" class="hidden"></div>
+
+  <div id="letterCard" class="card hidden">
+    <h2>Your calm, cited letter</h2>
+    <div class="row">
+      <div class="grow"><label>Your name</label><input id="fYou" placeholder="Your full name" /></div>
+      <div class="grow"><label>Their name / organisation</label><input id="fThem" placeholder="e.g. DWP, or the company" /></div>
+    </div>
+    <div class="row">
+      <div class="grow"><label>Your reference / account no. (if any)</label><input id="fRef" placeholder="claim ref, account no." /></div>
+      <div class="grow"><label>Date the problem started</label><input id="fDate" type="date" /></div>
+    </div>
+    <label>Brief detail of what happened</label>
+    <textarea id="fDetail" rows="2" placeholder="one or two calm sentences of what happened"></textarea>
+    <div class="row" style="margin-top:10px"><button class="primary grow" id="genLetter">Generate letter</button><button id="copyLetter">Copy</button></div>
+    <div id="letterOut" class="out hidden"></div>
+    <p id="toneNote" class="muted"></p>
+  </div>
+
+  <div class="card">
+    <h2>Your tracked deadlines</h2>
+    <div id="deadlines"><p class="muted">None yet — when you get a right with a clock, "Track this deadline" saves it here (in this browser only).</p></div>
+  </div>
+
+  <p class="disc">The Redress Engine is a plain-language navigator, <b>not legal advice</b> and not a substitute for a solicitor or adviser. UK law only. It cannot guarantee any outcome. On high-stakes matters (benefits, health, housing, anything time-critical) get a free human adviser in your corner too.</p>
+</div>
+
+<script type="module">
+import { SCENARIOS, guidance, resolveLever, toneCheck, HUMAN_HELP } from './kernel/redress.mjs';
+
+const $ = (id) => document.getElementById(id);
+let engine = null;            // WebLLM engine when loaded
+let byok = JSON.parse(localStorage.getItem('redress_byok') || 'null');
+
+// ── scenario buttons (work with zero setup) ───────────────────────────────────
+const scEl = $('scenarios');
+for (const [id, sc] of Object.entries(SCENARIOS)) {
+  const b = document.createElement('button');
+  b.textContent = sc.title;
+  b.onclick = () => render(id);
+  scEl.appendChild(b);
+}
+
+// ── render the gated guidance for a scenario ──────────────────────────────────
+let currentScenario = null;
+function render(scenarioId) {
+  currentScenario = scenarioId;
+  const g = guidance(scenarioId, new Date().toISOString().slice(0, 10));
+  const res = $('result'); res.classList.remove('hidden');
+  if (!g.recognised) {
+    res.innerHTML = `<div class="card"><h2>Not recognised — and I won't guess</h2><p>${g.message}</p>${humanHTML(g.human)}</div>`;
+    $('letterCard').classList.add('hidden');
+    res.scrollIntoView({ behavior: 'smooth' }); return;
+  }
+  const rights = g.rights.map(r => `
+    <div class="right ${r.cited ? '' : 'warn'}">
+      <span class="chip ${r.cited ? 'c-ok' : 'c-warn'}">${r.cited ? 'CITED' : (r.kind === 'unverified' ? 'UNVERIFIED' : 'mechanism')}</span>
+      <b>${r.law || r.name || ''}</b><br>${r.plain}
+      ${r.caveat ? `<div class="cav">↳ ${r.caveat}</div>` : ''}
+      ${r.source ? `<div class="src">source: ${r.source}</div>` : ''}
+    </div>`).join('');
+  res.innerHTML = `<div class="card">
+    ${g.highStakes ? `<div class="stakes">⚠ High stakes — get a free human adviser in your corner too. Don't let this ride on a tool alone.</div>` : ''}
+    <h2>${g.title}</h2>
+    <b>Your rights</b>${rights}
+    ${g.also ? `<p><b>Also:</b> ${g.also}</p>` : ''}
+    <p><b>Deadline:</b> ${g.deadline.note} ${g.deadline.known ? `<button id="trackBtn" style="padding:4px 8px;font-size:12px">Track this deadline</button>` : ''}</p>
+    <p><b>Gather this evidence:</b></p><ul>${g.evidence.map(e => `<li>${e}</li>`).join('')}</ul>
+    <p class="esc"><b>If ignored →</b> ${g.escalation.join(' → ')}</p>
+    ${humanHTML(g.human)}
+    <div class="disc">${g.disclaimers.join(' ')}</div>
+  </div>`;
+  if (g.deadline.known) $('trackBtn').onclick = () => trackDeadline(g.title, g.deadline.due);
+  $('letterCard').classList.remove('hidden');
+  $('letterOut').classList.add('hidden');
+  res.scrollIntoView({ behavior: 'smooth' });
+}
+function humanHTML(h) {
+  return `<div class="human"><b>Free human help</b> — free, expert, and on your side:<br>${h.routes.map(r => r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${r.name}</a>` : r.name).join(' · ')}<br><span class="muted">${h.advise}</span></div>`;
+}
+
+// ── deadline tracker (localStorage · sovereign) ───────────────────────────────
+function trackDeadline(title, due) {
+  const list = JSON.parse(localStorage.getItem('redress_deadlines') || '[]');
+  if (!list.some(d => d.title === title && d.due === due)) { list.push({ title, due }); localStorage.setItem('redress_deadlines', JSON.stringify(list)); }
+  renderDeadlines();
+}
+function renderDeadlines() {
+  const list = JSON.parse(localStorage.getItem('redress_deadlines') || '[]').sort((a, b) => a.due.localeCompare(b.due));
+  const el = $('deadlines');
+  if (!list.length) { el.innerHTML = `<p class="muted">None yet — "Track this deadline" saves it here (this browser only).</p>`; return; }
+  const today = new Date().toISOString().slice(0, 10);
+  el.innerHTML = list.map((d, i) => `<div class="deadline ${d.due < today ? 'due' : ''}"><span>${d.title}</span><span>${d.due < today ? 'OVERDUE — escalate' : 'due ' + d.due}</span></div>`).join('') +
+    `<button style="margin-top:6px;padding:4px 8px;font-size:12px" onclick="localStorage.removeItem('redress_deadlines');location.reload()">clear</button>`;
+}
+renderDeadlines();
+
+// ── the optional AI analyser (WebLLM / BYOK) — TRIAGE + DRAFTING only ──────────
+$('setupBtn').onclick = () => $('aiSetup').classList.toggle('hidden');
+$('saveKey').onclick = () => { byok = { provider: $('provider').value, key: $('apikey').value.trim() }; localStorage.setItem('redress_byok', JSON.stringify(byok)); $('aiStatus').textContent = `AI ready (BYOK · ${byok.provider}). Your key stays in this browser.`; };
+$('webllmBtn').onclick = async () => {
+  $('webllmStatus').textContent = 'Loading a small model onto this device (first time ~1–2 min, then cached)…';
+  try {
+    const webllm = await import('https://esm.run/@mlc-ai/web-llm');
+    engine = await webllm.CreateMLCEngine('Llama-3.2-1B-Instruct-q4f16_1-MLC', { initProgressCallback: p => { $('webllmStatus').textContent = p.text; } });
+    $('webllmStatus').textContent = '✓ Model running on your device — private, no key, no cloud.';
+    $('aiStatus').textContent = 'AI ready (on-device WebLLM). Nothing leaves your machine.';
+  } catch (e) { $('webllmStatus').textContent = 'Could not load WebLLM here (needs a recent browser + WebGPU). You can still pick a scenario or use a BYOK key.'; }
+};
+
+async function llm(system, user) {
+  if (engine) { const r = await engine.chat.completions.create({ messages: [{ role: 'system', content: system }, { role: 'user', content: user }], temperature: 0.2 }); return r.choices[0].message.content; }
+  if (byok && byok.key) return await byokComplete(system, user);
+  return null;
+}
+async function byokComplete(system, user) {
+  const p = byok.provider;
+  if (p === 'anthropic') { const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'content-type': 'application/json', 'x-api-key': byok.key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' }, body: JSON.stringify({ model: 'claude-sonnet-5', max_tokens: 600, system, messages: [{ role: 'user', content: user }] }) }); const d = await r.json(); return (d.content && d.content[0] && d.content[0].text) || ''; }
+  if (p === 'openai') { const r = await fetch('https://api.openai.com/v1/chat/completions', { method: 'POST', headers: { 'content-type': 'application/json', authorization: 'Bearer ' + byok.key }, body: JSON.stringify({ model: 'gpt-4o', max_tokens: 600, messages: [{ role: 'system', content: system }, { role: 'user', content: user }] }) }); const d = await r.json(); return d.choices?.[0]?.message?.content || ''; }
+  const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + byok.key, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ systemInstruction: { parts: [{ text: system }] }, contents: [{ parts: [{ text: user }] }] }) }); const d = await r.json(); return d.candidates?.[0]?.content?.parts?.[0]?.text || '';
+}
+
+// analyse free text -> classify to a scenario key (LLM triage; kernel does the law)
+$('analyseBtn').onclick = async () => {
+  const text = $('freetext').value.trim();
+  if (!text) { $('aiStatus').textContent = 'Type a sentence about what happened, or just tap a scenario above.'; return; }
+  const keys = Object.keys(SCENARIOS);
+  if (!engine && !(byok && byok.key)) { $('aiStatus').textContent = 'No AI set up — tap ⚙ AI setup (on-device WebLLM, no key), or just pick the closest scenario above.'; return; }
+  $('aiStatus').textContent = 'Reading your situation…';
+  const sys = `You map a UK person's problem to exactly ONE scenario key from this list, or "unknown". Reply with ONLY the key, nothing else. Keys: ${keys.join(', ')}.`;
+  let key = (await llm(sys, text) || '').trim().replace(/[^a-z_]/g, '');
+  if (!keys.includes(key)) key = 'unknown';
+  $('aiStatus').textContent = key === 'unknown' ? "Couldn't match a known scenario — showing you human help." : 'Matched: ' + SCENARIOS[key].title;
+  render(key === 'unknown' ? 'unknown' : key);
+};
+
+// letter generator — the legal claim comes from the kernel; AI only words it calmly
+$('genLetter').onclick = async () => {
+  if (!currentScenario) return;
+  const g = guidance(currentScenario, new Date().toISOString().slice(0, 10));
+  const cited = g.rights.find(r => r.cited) || g.rights[0] || {};
+  const f = { you: $('fYou').value || '[your name]', them: $('fThem').value || '[organisation]', ref: $('fRef').value, date: $('fDate').value, detail: $('fDetail').value || '[what happened]' };
+  let letter;
+  if (engine || (byok && byok.key)) {
+    const sys = `Draft a CALM, FIRM, polite British-English letter for a member of the public. Invoke ONLY this legal right, quoting it — do NOT invent or add any other law: "${cited.law}: ${cited.plain}" (${cited.source}). No threats, no aggression (that gets requests bounced). Ask clearly for the remedy and a response within the stated time. 150-220 words.`;
+    const usr = `From: ${f.you}\nTo: ${f.them}\nReference: ${f.ref || 'n/a'}\nProblem started: ${f.date || 'n/a'}\nWhat happened: ${f.detail}\nDeadline note: ${g.deadline.note}`;
+    $('letterOut').classList.remove('hidden'); $('letterOut').textContent = 'Drafting…';
+    letter = await llm(sys, usr) || templateLetter(f, cited, g);
+  } else {
+    letter = templateLetter(f, cited, g);
+  }
+  $('letterOut').classList.remove('hidden'); $('letterOut').textContent = letter;
+  const tc = toneCheck(letter);
+  $('toneNote').innerHTML = tc.calm ? `<span class="tonegood">✓ Tone reads calm and firm.</span> Review it, add anything specific, then send.` : `<span class="tonebad">⚠ ${tc.note}</span> Flagged: ${tc.flagged.join(', ')}`;
+};
+function templateLetter(f, cited, g) {
+  return `Dear ${f.them},\n\nRe: ${f.ref || 'my request'}\n\nI am writing about the following: ${f.detail}.\n\nI am exercising my right under ${cited.law}. ${cited.plain}\n\nPlease treat this as a formal request and respond ${g.deadline.known ? 'by ' + g.deadline.due + ' (within the time the law allows)' : 'within the time the law allows'}. If I do not receive a satisfactory response, I will escalate as I am entitled to (${g.escalation.join(', ')}).\n\nThank you for your help in resolving this.\n\nYours faithfully,\n${f.you}`;
+}
+$('copyLetter').onclick = () => { const t = $('letterOut').textContent; if (t) navigator.clipboard?.writeText(t); $('toneNote').textContent = 'Copied.'; };
+
+if (byok && byok.key) $('aiStatus').textContent = `AI ready (BYOK · ${byok.provider}). Or just pick a scenario.`;
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

@@ -1,5 +1,9 @@
 # redress-engine
 
+### ▶ Live app: **https://sjgant80-hub.github.io/redress-engine/**
+Open it, pick your situation (or describe it), get your real rights + deadline + a calm
+cited letter + free human help. No install, works offline, optional on-device WebLLM / BYOK.
+
 **A legal-process navigator for everyone. The law is public — the *interface* is
 locked behind money and jargon. This is the interface.**
 
