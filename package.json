@@ -1,0 +1,14 @@
+{
+  "name": "redress-engine",
+  "version": "0.1.0",
+  "description": "A legal-process navigator for everyone — plain-English rights, the REAL statutory lever per scenario, calm cited letters, statutory deadlines, and honest routing to free human help. Accuracy-gated. Not legal advice. UK law.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/redress.test.mjs",
+    "gate": "node konomi/run-gate.mjs",
+    "demo": "node demo/redress.mjs"
+  },
+  "keywords": ["legal-self-help", "gdpr", "sar", "consumer-rights", "sovereign", "proof-of-play"],
+  "engines": { "node": ">=20" }
+}
