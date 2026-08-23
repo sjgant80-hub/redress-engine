@@ -250,7 +250,8 @@ $('genLetter').onclick = async () => {
   $('toneNote').innerHTML = tc.calm ? `<span class="tonegood">✓ Tone reads calm and firm.</span> Review it, add anything specific, then send.` : `<span class="tonebad">⚠ ${tc.note}</span> Flagged: ${tc.flagged.join(', ')}`;
 };
 function templateLetter(f, cited, g) {
-  return `Dear ${f.them},\n\nRe: ${f.ref || 'my request'}\n\nI am writing about the following: ${f.detail}.\n\nI am exercising my right under ${cited.law}. ${cited.plain}\n\nPlease treat this as a formal request and respond ${g.deadline.known ? 'by ' + g.deadline.due + ' (within the time the law allows)' : 'within the time the law allows'}. If I do not receive a satisfactory response, I will escalate as I am entitled to (${g.escalation.join(', ')}).\n\nThank you for your help in resolving this.\n\nYours faithfully,\n${f.you}`;
+  const detail = String(f.detail).replace(/[.!?\s]+$/, ''); // avoid "…not.." when the user already ended with a full stop
+  return `Dear ${f.them},\n\nRe: ${f.ref || 'my request'}\n\nI am writing about the following: ${detail}.\n\nI am exercising my right under ${cited.law}. ${cited.plain}\n\nPlease treat this as a formal request and respond ${g.deadline.known ? 'by ' + g.deadline.due + ' (within the time the law allows)' : 'within the time the law allows'}. If I do not receive a satisfactory response, I will escalate as I am entitled to (${g.escalation.join(', ')}).\n\nThank you for your help in resolving this.\n\nYours faithfully,\n${f.you}`;
 }
 $('copyLetter').onclick = () => { const t = $('letterOut').textContent; if (t) navigator.clipboard?.writeText(t); $('toneNote').textContent = 'Copied.'; };
 
